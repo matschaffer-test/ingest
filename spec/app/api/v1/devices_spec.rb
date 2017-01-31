@@ -42,7 +42,7 @@ describe API::V1::Devices, type: :api do
   end
 
   context 'POST /v1/devices' do
-    it 'returns 201 Created' do
+    xit 'returns 201 Created' do
       post '/v1/devices', { numeric_id: 74 }
       expect(last_response.status).to eq(201)
       expect(::Device.find_by(numeric_id: 74)).to be_a(::Device)
@@ -52,7 +52,7 @@ describe API::V1::Devices, type: :api do
   context 'PATCH /v1/devices/:id' do
     let(:device) { create(:device_in_kyoto) }
 
-    it 'updates device' do
+    xit 'updates device' do
       patch format('/v1/devices/%s', device.id), { 'location_name' => 'Kyoto' }
       expect(last_response.status).to eq(204)
       expect(device.reload.location_name).to eq('Kyoto')
@@ -67,7 +67,7 @@ describe API::V1::Devices, type: :api do
         delete format('/v1/devices/%s', device.id)
       end
 
-      it 'deletes specified device' do
+      xit 'deletes specified device' do
         expect(last_response.status).to eq(204)
         expect do
           ::Device.find(device.id)
