@@ -1,5 +1,10 @@
 class Measurement < ActiveRecord::Base
   validates :captured_at, :location, :device_id, :payload, presence: true
+  validates :device_id, numericality: {
+    greater_than_or_equal_to: 0,
+    less_than_or_equal_to: 2 ** 32,
+    only_integer: true
+  }
 end
 
 # == Schema Information
