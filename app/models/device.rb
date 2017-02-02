@@ -1,5 +1,10 @@
 class Device < ActiveRecord::Base
   validates :payload, presence: true
+  validates :numeric_id, numericality: {
+    greater_than_or_equal_to: 0,
+    less_than_or_equal_to: 2 ** 32,
+    only_integer: true
+  }
 
   class << self
     def valid_attributes
