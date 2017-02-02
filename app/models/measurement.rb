@@ -11,11 +11,12 @@ end
 #
 # Table name: measurements
 #
-#  id          :integer          not null, primary key
+#  original_id :integer          not null
 #  captured_at :datetime         not null
 #  location    :geography({:srid not null, point, 4326
 #  device_id   :integer          not null
 #  payload     :jsonb            not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  id          :uuid             not null, primary key
 #
