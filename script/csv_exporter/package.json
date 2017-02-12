@@ -1,0 +1,16 @@
+{
+  "name": "csv_exporter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "aws-sdk": "^2.12.0",
+    "pg": "^6.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "zip -r package.zip index.js node_modules"
+  },
+  "author": "Eito Katagiri",
+  "license": "ISC"
+}
